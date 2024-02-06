@@ -1,14 +1,21 @@
-function add(n1, n2, showResult, phrase) {
-    var result = n1 + n2;
-    if (showResult) {
-        console.log(phrase + result);
-    }
-    else {
-        return result;
-    }
+// const person = {
+//   name: "Mario",
+//   age: 31,
+//   hobbies: ["Sports", "Gaming"],
+// };
+var Role;
+(function (Role) {
+    Role[Role["ADMIN"] = 0] = "ADMIN";
+    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
+    Role[Role["AUTHOR"] = 2] = "AUTHOR";
+})(Role || (Role = {}));
+var person = {
+    name: "Mario",
+    age: 31,
+    hobbies: ["Sports", "Gaming"],
+    role: Role.ADMIN,
+};
+console.log(person.name);
+if (person.role === Role.ADMIN) {
+    console.log("is admin");
 }
-var number1 = 6;
-var number2 = 3;
-var printResult = true;
-var printPhrase = "Result is: ";
-add(number1, number2, printResult, printPhrase);
