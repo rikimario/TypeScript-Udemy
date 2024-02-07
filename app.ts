@@ -1,24 +1,15 @@
-// const person = {
-//   name: "Mario",
-//   age: 31,
-//   hobbies: ["Sports", "Gaming"],
-// };
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
 }
 
-const person = {
-  name: "Mario",
-  age: 31,
-  hobbies: ["Sports", "Gaming"],
-  role: Role.ADMIN,
-};
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
 
-console.log(person.name);
-
-if (person.role === Role.ADMIN) {
-  console.log("is admin");
-}
+const combinedNames = combine("Mario", "Anna");
+console.log(combinedNames);
