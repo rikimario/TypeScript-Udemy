@@ -33,3 +33,22 @@ Person = __decorate([
 ], Person);
 const pers = new Person();
 console.log(pers);
+// ---
+function Log(target, propertyName) {
+    console.log("Property decorator!");
+    console.log(target, propertyName);
+}
+class Product {
+    set price(val) {
+        if (val > 0) {
+            this._price = val;
+        }
+    }
+    constructor(t, p) {
+        this.title = t;
+        this._price = p;
+    }
+    getPriceWithTax(tax) {
+        return this._price * (1 + tax);
+    }
+}
