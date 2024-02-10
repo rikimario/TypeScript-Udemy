@@ -1,9 +1,21 @@
-function Logger(constructor: Function) {
-  console.log("Logging...");
-  console.log(constructor);
+function Logger(logString: string) {
+  return function (constructor: Function) {
+    console.log("Logging...");
+    console.log(constructor);
+  };
 }
 
-@Logger
+function WithTemplate(template: string, hookId: string) {
+  return function (constructor: Function) {
+    const hookEl = document.getElementById(hookId);
+    if (hookEl) {
+      hookEl.innerHTML = template;
+    }
+  };
+}
+
+@WithTemplate("<h1>My Person Tag</h1>", "app")
+// @Logger("LOGGING")
 class Person {
   name = "Mario";
 
