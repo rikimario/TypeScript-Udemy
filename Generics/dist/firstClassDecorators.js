@@ -38,7 +38,14 @@ function Log(target, propertyName) {
     console.log("Property decorator!");
     console.log(target, propertyName);
 }
+function LogTwo(target, name, descriptor) {
+    console.log("Accessor decorator!");
+    console.log(target);
+    console.log(name);
+    console.log(descriptor);
+}
 class Product {
+    //   @LogTwo
     set price(val) {
         if (val > 0) {
             this._price = val;
@@ -52,3 +59,6 @@ class Product {
         return this._price * (1 + tax);
     }
 }
+__decorate([
+    Log
+], Product.prototype, "title", void 0);
