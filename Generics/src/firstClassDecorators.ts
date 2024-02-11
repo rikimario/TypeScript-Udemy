@@ -5,16 +5,16 @@ function Logger(logString: string) {
   };
 }
 
-function WithTemplate(template: string, hookId: string) {
-  return function (constructor: Function) {
-    const hookEl = document.getElementById(hookId);
-    if (hookEl) {
-      hookEl.innerHTML = template;
-    }
-  };
-}
+// function WithTemplate(template: string, hookId: string) {
+//   return function (constructor: Function) {
+//     const hookEl = document.getElementById(hookId);
+//     if (hookEl) {
+//       hookEl.innerHTML = template;
+//     }
+//   };
+// }
 
-@WithTemplate("<h1>My Person Tag</h1>", "app")
+// @WithTemplate("<h1>My Person Tag</h1>", "app")
 // @Logger("LOGGING")
 class Person {
   name = "Mario";

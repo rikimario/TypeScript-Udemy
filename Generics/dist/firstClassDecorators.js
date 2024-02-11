@@ -11,26 +11,22 @@ function Logger(logString) {
         console.log(constructor);
     };
 }
-function WithTemplate(template, hookId) {
-    return function (constructor) {
-        const hookEl = document.getElementById(hookId);
-        if (hookEl) {
-            hookEl.innerHTML = template;
-        }
-    };
-}
-let Person = 
+// function WithTemplate(template: string, hookId: string) {
+//   return function (constructor: Function) {
+//     const hookEl = document.getElementById(hookId);
+//     if (hookEl) {
+//       hookEl.innerHTML = template;
+//     }
+//   };
+// }
+// @WithTemplate("<h1>My Person Tag</h1>", "app")
 // @Logger("LOGGING")
 class Person {
     constructor() {
         this.name = "Mario";
         console.log("Creating person");
     }
-};
-Person = __decorate([
-    WithTemplate("<h1>My Person Tag</h1>", "app")
-    // @Logger("LOGGING")
-], Person);
+}
 const pers = new Person();
 console.log(pers);
 // ---
