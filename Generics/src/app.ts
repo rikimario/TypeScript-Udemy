@@ -9,3 +9,4 @@
 // promise.then((data) => {
 //   data.split(" ");
 // });
+console.log("watch mode on!Update");
