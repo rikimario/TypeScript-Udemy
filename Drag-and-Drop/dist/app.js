@@ -105,6 +105,11 @@ class Component {
 }
 // * ProjectItem Class
 class ProjectItem extends Component {
+    get persons() {
+        return this.project.people === 1
+            ? "1 person"
+            : `${this.project.people} people`;
+    }
     constructor(hostId, project) {
         super("single-project", hostId, false, project.id);
         this.project = project;
@@ -114,8 +119,7 @@ class ProjectItem extends Component {
     configure() { }
     renderContent() {
         this.element.querySelector("h2").textContent = this.project.title;
-        this.element.querySelector("h3").textContent =
-            this.project.people.toString();
+        this.element.querySelector("h3").textContent = this.persons + " assigned";
         this.element.querySelector("p").textContent = this.project.description;
     }
 }
